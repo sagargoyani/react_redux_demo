@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { loadState } from './localStorage';
-
-const baseUrl = `http://ioa.imgn.to/api`;
+import { baseUrl } from '../utils/constants'
 const instance = axios.create({
   baseURL: baseUrl,
   headers: {
@@ -18,10 +17,10 @@ const auth = {
 const isAuthenticated = () => {
   const initalStats = loadState();
   if (initalStats && initalStats.loginResponse && initalStats.loginResponse.response.code === 1) {
-  ) {
     return true;
-  } 
-  return false;
+  } else {
+    return false;
+  }
 };
 
 export { auth, isAuthenticated };

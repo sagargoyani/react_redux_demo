@@ -27,7 +27,6 @@ class HomePage extends Component {
     return (
       <>
         <Button variant="primary" onClick={loginClicked}>
-          {' '}
           login
         </Button>
         <LoginForm

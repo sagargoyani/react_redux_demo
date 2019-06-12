@@ -15,12 +15,12 @@ class Dashboard extends Component {
     return (
       <div>
         <div>
-          email:{' '}
+          email:
           {loginResponse && loginResponse.response.code == 1
-            ? loginResponse.response.data.email
+            ? loginResponse.response.data.email : ''}
         </div>
         <div>
-          Token:{' '}
+          Token:
           {loginResponse && loginResponse.response.code == 1
             ? loginResponse.response.data.token
             : ''}
@@ -31,7 +31,7 @@ class Dashboard extends Component {
 }
 
 const mapStateToProps = (state, props) => ({
-        loginResponse: state.loginResponse
-    })
+  loginResponse: state.loginResponse
+})
 
 export default connect(mapStateToProps)(Dashboard);

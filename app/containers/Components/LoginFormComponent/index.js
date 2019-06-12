@@ -1,16 +1,12 @@
 import React, { Component } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
 import { Formik } from 'formik';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import * as Yup from 'yup';
-import { userLogin } from '../../HomePage/action';
 import { history } from '../../App';
 
 class Login extends Component {
   constructor(props) {
     super(props);
-    console.log('props', this.props);
   }
 
   componentDidUpdate() {
@@ -101,9 +97,7 @@ class Login extends Component {
                       <label style={{ color: 'red' }} color="danger">
                         please enter valid usename or password
                       </label>
-                    ) : (
-                      ''
-                    )}
+                    ) :''}
                   </Form>
                 </Modal.Body>
                 <Modal.Footer>
@@ -112,13 +106,12 @@ class Login extends Component {
                     type="button"
                     onClick={handleSubmit}
                   >
-                    > > Sign in
+                   Sign in
                   </Button>
                   <Button
                     as="input"
                     onClick={this.props.onHide}
                     value="Cancel"
-                  />
                   />
                 </Modal.Footer>
               </>
@@ -130,18 +123,4 @@ class Login extends Component {
   }
 }
 
-// const mapStateToProps = (state, props) => {
-//     console.log("state", state)
-//     return ({
-//         loginResponse: state.loginResponse
-//     })
-// }
-
-// const mapActionsToProps = (dispatch, props) => {
-//     return bindActionCreators({
-//         loginHandler: userLogin
-//     }, dispatch)
-// }
-
-// export default connect(mapStateToProps, mapActionsToProps)(Login);
 export default Login;

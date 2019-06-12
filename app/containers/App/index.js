@@ -12,8 +12,6 @@ import {
   Router,
   Route,
   Switch,
-  Redirect,
-  BrowserRouter,
 } from 'react-router-dom';
 
 import HomePage from 'containers/HomePage/Loadable';
@@ -21,7 +19,7 @@ import Dashboard from 'containers/DashboardPage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import { createBrowserHistory } from 'history';
 import { publicDecrypt } from 'crypto';
-import { PrivateRoute, PublicRoute } from '../Components/Routes';
+import { PrivateRoute, PublicRoute } from '../../Components/Routes';
 
 import GlobalStyle from '../../global-styles';
 export const history = createBrowserHistory();

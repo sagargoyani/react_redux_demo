@@ -1,6 +1,6 @@
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
-import { isAuthenticated } from '../../../services/auth';
+import { isAuthenticated } from '../../services/auth';
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
@@ -9,13 +9,13 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
       isAuthenticated() ? (
         <Component {...props} />
       ) : (
-        <Redirect
-          to={{
-            pathname: '/',
-            state: { from: props.location },
-          }}
-        />
-      )
+          <Redirect
+            to={{
+              pathname: '/',
+              state: { from: props.location },
+            }}
+          />
+        )
     }
   />
 );

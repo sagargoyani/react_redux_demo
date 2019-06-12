@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
-import { history } from '../../App';
+import { history } from '../../containers/App';
 
 class Login extends Component {
   constructor(props) {
@@ -18,7 +18,6 @@ class Login extends Component {
   }
 
   render() {
-    // this.props.loginRes && this.props.loginRes.response && this.props.onHide()
     const { loginResponse } = this.props;
     console.log('props', this.props);
     console.log('loginResponse', loginResponse);
@@ -48,8 +47,6 @@ class Login extends Component {
               values,
               touched,
               errors,
-              dirty,
-              isSubmitting,
               handleSubmit,
               handleChange,
               handleBlur,
@@ -97,7 +94,7 @@ class Login extends Component {
                       <label style={{ color: 'red' }} color="danger">
                         please enter valid usename or password
                       </label>
-                    ) :''}
+                    ) : ''}
                   </Form>
                 </Modal.Body>
                 <Modal.Footer>
@@ -106,7 +103,7 @@ class Login extends Component {
                     type="button"
                     onClick={handleSubmit}
                   >
-                   Sign in
+                    Sign in
                   </Button>
                   <Button
                     as="input"

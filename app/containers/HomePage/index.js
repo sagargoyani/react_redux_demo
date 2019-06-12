@@ -10,6 +10,7 @@ import { Button } from 'react-bootstrap';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { userLogin } from './action';
+import './index.css'
 import LoginForm from '../../Components/LoginFormComponent';
 
 class HomePage extends Component {
@@ -26,11 +27,13 @@ class HomePage extends Component {
     const modalClose = () => this.setState({ loginPopup: false });
     return (
       <>
-        <center >
-          <Button className='loginbtn' variant="primary" onClick={loginClicked} >
-            login
+      <div class="container">
+    <div id="col" class="logindiv">
+        <Button className='loginbtn' variant="primary" onClick={loginClicked} >
+          login
             </Button>
-        </center>
+          </div>
+        </div>
         <LoginForm
           show={this.state.loginPopup}
           onHide={modalClose}
